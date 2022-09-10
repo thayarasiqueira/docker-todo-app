@@ -1,6 +1,6 @@
-FROM node:14-alpine
+FROM node:14-alpine AS todofrontend
 EXPOSE 3000
-WORKDIR /home/node/app
+WORKDIR /
+COPY . ./
 ADD node_modules.tar.gz ./
-COPY . home/node/app
 CMD ["npm", "start"]
